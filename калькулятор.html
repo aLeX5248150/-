@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="js.js"></script>
+</head>
+<body>
+
+<div class="Calculator">
+<div class="input-styles"><input type="text" id="result" value="0" disabled></div>
+
+  <div class="buttons">
+    <button class="ac" onclick="clearArea ()">AC</button>
+    <button class="new6" onchange="" >+/-</button>
+    <button class="new7" onclick="addNumber ('%')">%</button>
+    <button id="1" class="new1" onclick="addNumber ('/')">
+        <img src="icons8-деление-30.png" alt="">
+    </button>
+    <button onclick="addNumber ('7')">7</button>
+    <button onclick="addNumber ('8')">8</button>
+    <button onclick="addNumber ('9')">9</button>
+    <button id="1" class="new2" onclick="addNumber ('*')">
+        <img src="icons8-multiply-50.png" alt="">
+    </button>
+    <button onclick="addNumber ('4')">4</button>
+    <button onclick="addNumber ('5')">5</button>
+    <button onclick="addNumber ('6')">6</button>
+    <button id="1" class="new3" onclick="addNumber ('-')">
+        <img src="icons8-минус-48.png" alt="">
+    </button>
+    <button onclick="addNumber ('1')">1</button>
+    <button onclick="addNumber ('2')">2</button>
+    <button onclick="addNumber ('3')">3</button>
+    <button id="1" class="new4" onclick="addNumber ('+')">
+        <img src="icons8-plus-math-48.png" alt="">
+    </button>
+    <button class="large" onclick="addNumber ('0')">0</button>
+    <button onclick="addNumber (',')">,</button>
+    <button class="new5" onclick="getResult ()">
+        <img src="icons8-equal-sign-50.png" alt="">
+    </button>
+   
+  </div>
+    
+</div>
+
+</body>
+</html>

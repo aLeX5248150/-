@@ -1,0 +1,94 @@
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+button {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 0;
+    color: white;
+background-color: rgb(64, 62, 62);
+font-size: 34px;
+
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.Calculator {
+    position: relative;
+    margin-top: 200px;
+}
+.new1 {
+    padding-top: 10px;
+    background-color: rgb(255, 162, 0);
+}
+.new2 {
+    padding-top: 10px;
+    background-color: rgb(255, 162, 0);
+}
+.new2 img {
+height: 40px;
+width: 42px;
+}
+.new1 img {
+    height: 30px;
+}
+.large {
+    grid-column: span 2;
+    grid-row: span 1;
+    width: 150px;
+    border-radius: 40px;
+    text-align: left;
+   padding-left: 28px;
+}
+.new3 {
+    background-color: rgb(255, 162, 0);
+}
+.new3 img {
+    width: 27px;
+    height: 44px;
+    padding-top: 7px;
+}
+.new4 img {
+    width: 32px;
+    height: 30px;
+    padding-top: 7px;
+    
+}
+.new4 {
+    background-color: rgb(255, 162, 0);
+}
+
+.new5 img {
+    width: 36px;
+    padding-top: 6px;
+}
+.new5 {
+    background-color: rgb(255, 162, 0);
+}
+.ac, .new6, .new7 {
+    background-color: gray;
+    color: black;
+}
+.ac {
+    font-size: 29px;
+}
+.Calculator input {
+   background-color: transparent;
+   border: 0;
+   font-size: 65px;
+   font-weight: lighter;
+   color: white;
+   width: 190px;
+}
+.input-styles {
+   position: relative;
+   left: 200px;
+  
+    
+}
