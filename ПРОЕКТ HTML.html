@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Tech | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles\main.css">
+</head>
+<body class="light-theme">
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Добро пожаловать!</h2>
+            <p>Спасибо, что посетили наш сайт!</p>
+        </div>
+    </div>
+
+<header class="header" data-js-header>
+    <div class="header__promo">
+        <span>Subscribe to our Newsletter For New & latest Blogs and Resources</span>
+        <a href="#">
+                <img class="icons" src="Icon.png" alt="">
+        </a>
+    </div>
+    <div class="header__nav__container">
+        <div class="header__nav">
+            <img src="Logo.png" alt="">
+            <div class="header__overlay" data-js-header-overlay>
+                <ul class="list">
+                    <li id="item-1" class="home">Home</li>
+                    <li id="item-2">News</li>
+                    <li id="item">Podcasts</li>
+                    <li id="item-3">Resources</li>
+                </ul>
+            </div>
+            <a href="https://future-tech.ru/contact-us/" id="buttonId">Contact Us</a>
+        </div>
+    </div>
+    <div>
+        <ol id="hover-block">
+            <li>Новые проекты</li>
+            <li>Приглашённые спикеры</li>
+            <li>Мероприятия</li>
+        </ol>
+    </div>
+    <div>
+        <ol id="hover-block-2">
+            <li>Twitter</li>
+            <li>YouTube</li>
+            <li>Instagram</li>
+        </ol>
+    </div>
+</header>
+
+    <main class="main__container">
+        <div class="section-1">
+            <div class="section-1__description">
+                <div class="description__text">
+                    <h3>Your Journey to Tomorrow Begins Here</h3>
+                    <h1>Explore the Frontiers of Artificial Intelligence</h1>
+                    <p>Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.</p>
+                </div>
+                    <div class="description__blocks">
+                        <div class="description__block-1">
+                            <img class="plus-1" src="icons8-plus-math-26.png" alt=""> <p class="number-bold-1">300</p>
+                            <p class="block-desc">Resources available</p>
+                        </div>
+                        <div class="description__block-2">
+                            <img class="plus-2" src="icons8-plus-math-26.png" alt=""> <p class="number-bold">12k</p>
+                            <p class="block-desc">Total Downloads</p>
+                        </div>
+                        <div class="description__block-3">
+                            <img class="plus-3" src="icons8-plus-math-26.png" alt=""> <p class="number-bold">10k</p>
+                            <p class="block-desc">Active Users</p>
+                        </div>
+                    </div>
+            </div>
+
+                
+                    <div class="section-1__resources">
+                        <img src="" alt="">
+                        <h4>Explore 1000+ resources</h4>
+                        <p>Over 1,000 articles on emerging tech trends and breakthroughs.</p>
+                        <button>Explore Resources</button>
+                        <img class="button__vector" src="Vector 431 (Stroke).png" alt="">
+                            </div>
+        
+                  
+
+
+
+
+
+
+
+
+<div class="section-1__blocks">
+    <div class="section__block-1">
+        <img src="Icon (1).png" alt="">
+        <ul>Latest News Updates</ul>
+        <li>Stay Current</li>
+        <br><br>
+        <p>Over 1,000 articles published monthly</p>
+        <a href="#"><div class="vector-container"><img class="Vector-1" src="Vector 431 (Stroke) (1).png" alt=""></div></a>
+    </div>
+    <div class="section__block-2">
+        <img src="Icon (2).png" alt="">
+        <ul>Expert Contributors</ul>
+        <li>Trusted Insights</li>
+        <br><br>
+        <p>50+ renowned AI experts on our team</p>
+        <a href="#"><div class="vector-container"><img class="Vector-1" src="Vector 431 (Stroke) (1).png" alt=""></div></a>
+    </div>
+    <div class="section__block-3">
+        <img src="Icon (3).png" alt="">
+        <ul>Global Readership</ul>
+        <li>Worldwide Impact</li>
+        <br><br>
+        <p>2 million monthly readers</p>
+       <a href="#"><div class="vector-container"><img class="Vector-1" src="Vector 431 (Stroke) (1).png" alt=""></div></a>
+    </div>
+</div>
+</div>
+
+</main> 
+<input type="text" id="inputText">
+<p id="outputText"></p>
+
+<form id="myForm">
+    <input class="iii" type="text" required>
+    <button class="bbtn" type="submit">Send</button>
+</form>
+
+<div class="images__container">
+    <div class="images">
+        <img class="img1" src="Image.png" alt="">
+        <img class="img2" src="Image (1).png" alt="">
+        <img class="img3" src="Image (2).png" alt="">
+        <img class="img4" src="Image (3).png" alt="">
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="wrapper__chat">
+        <div id="chat"></div>
+    <input type="text" id="messageInput" placeholder="Contact support">
+    <button id="sendButton">Send</button>
+    </div>
+
+    <script>
+        const chat = document.getElementById('chat');
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+
+        const socket = new WebSocket('ws://localhost:8080');
+
+        // Регистрация клиента как "user"
+        socket.onopen = function() {
+            socket.send(JSON.stringify({ type: 'register', role: 'user' }));
+        };
+
+        // Обработка входящих сообщений
+        socket.onmessage = function(event) {
+            const message = JSON.parse(event.data);
+            chat.innerHTML += `<p><strong>Оператор:</strong> ${message.text}</p>`;
+            chat.scrollTop = chat.scrollHeight;
+        };
+
+        // Отправка сообщения оператору
+        sendButton.onclick = function() {
+            const messageText = messageInput.value;
+            if (messageText) {
+                const message = {
+                    from: 'user',
+                    to: 'operator',
+                    text: messageText
+                };
+                socket.send(JSON.stringify(message));
+                chat.innerHTML += `<p><strong>Вы:</strong> ${messageText}</p>`;
+                messageInput.value = '';
+            }
+        };
+    </script>
+    
+    <div class="galery__wrapper">
+        <div class="galery__images">
+            <div class="img-1">
+                <img class="icon-1" src="Profile.png" alt="">
+                    <h3>Sarah Thompson</h3>
+                <p class="sf">San Francisco, USA</p>
+                <img class="icon-stars" src="Sub Container (2).png" alt="">
+                <p class="descr-1">The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case
+                    studies that are invaluable for staying updated.</p>
+            </div>
+    
+            <div class="img-1">
+                <img class="icon-1" src="Profile.png" alt="">
+                    <h3>Sarah Thompson</h3>
+                <p class="sf">San Francisco, USA</p>
+                <img class="icon-stars" src="Sub Container (2).png" alt="">
+                <p class="descr-1">The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case
+                    studies that are invaluable for staying updated.</p>
+            </div>
+    
+            <div class="img-1">
+                <img class="icon-1" src="Profile.png" alt="">
+                    <h3>Sarah Thompson</h3>
+                <p class="sf">San Francisco, USA</p>
+                <img class="icon-stars" src="Sub Container (2).png" alt="">
+                <p class="descr-1">The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case
+                    studies that are invaluable for staying updated.</p>
+            </div>
+    
+            <div class="img-1">
+                <img class="icon-1" src="Profile.png" alt="">
+                    <h3>Sarah Thompson</h3>
+                <p class="sf">San Francisco, USA</p>
+                <img class="icon-stars" src="Sub Container (2).png" alt="">
+                <p class="descr-1">The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case
+                    studies that are invaluable for staying updated.</p>
+            </div>
+    
+            <div class="img-1">
+                <img class="icon-1" src="Profile.png" alt="">
+                    <h3>Sarah Thompson</h3>
+                <p class="sf">San Francisco, USA</p>
+                <img class="icon-stars" src="Sub Container (2).png" alt="">
+                <p class="descr-1">The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case
+                    studies that are invaluable for staying updated.</p>
+            </div>
+    
+            <div class="img-1">
+                <img class="icon-1" src="Profile.png" alt="">
+                    <h3>Sarah Thompson</h3>
+                <p class="sf">San Francisco, USA</p>
+                <img class="icon-stars" src="Sub Container (2).png" alt="">
+                <p class="descr-1">The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case
+                    studies that are invaluable for staying updated.</p>
+            </div>
+    
+    
+           
+           
+        </div>
+    
+    </div>
+    
+    <footer>
+        <ul>Home
+            <br><br>
+            <li>Features</li>
+            <li>Blogs</li>
+            <li>Resources
+                <span>New</span>
+            </li>
+            <li>Testimonials</li>
+            <li>Contact Us</li>
+            <li>Newsletter</li>
+        </ul>
+        <ul>News
+            <br><br>
+            <li>Trending Stories</li>
+            <li>Featured Videos</li>
+            <li>Technology</li>
+            <li>Health</li>
+            <li>Politics</li>
+            <li>Environment</li>
+        </ul>
+        <ul>Blogs
+            <br><br>
+            <li>Quantum Computing</li>
+            <li>AI Ethics</li>
+            <li>Space Exploration</li>
+            <li>Biotechnology
+                <span>New</span>
+            </li>
+            <li>Renewable Energy</li>
+            <li>Biohacking</li>
+        </ul>
+        <ul>Podcasts
+            <br><br>
+            <li>AI Revolution</li>
+            <li>AI Revolution
+                <span>New</span>
+            </li>
+            <li>TechTalk AI</li>
+            <li>AI Conversations</li>
+        </ul>
+        <ul class="resources">Resources 
+            <br><br>
+           <a href="/">
+            <li class="l-1">Whitepapers
+                <img class="a1" src="Vector 431 (Stroke) (2).png" alt="">
+            </li>
+           </a>
+           <a href="/">
+            <li class="l-2">Ebooks
+                <img class="a2" src="Vector 431 (Stroke) (2).png" alt="">
+            </li>
+        </a>
+        <a href="/">
+            <li class="l-3">Reports
+                <img class="a3" src="Vector 431 (Stroke) (2).png" alt="">
+            </li>
+        </a>
+        <a href="/">
+            <li class="l-4">Research Papers
+                <img class="a4" src="Vector 431 (Stroke) (2).png" alt="">
+            </li>
+        </a>
+        </ul>
+    
+    </footer>
+    
+</div>
+
+<button id="theme-toggle">
+  <img src="icons8-солнце-30.png" alt="">
+  <!-- <img src="icons8-символ-луны-30.png" alt=""> -->
+</button>
+
+
+
+
+
+<script src="scripts\main.js" type="module" defer></script>
+</body>
+</html>
+ 

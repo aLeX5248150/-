@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оператор</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #chat { width: 300px; height: 200px; border: 1px solid #ccc; padding: 10px; overflow-y: scroll; margin-bottom: 10px; }
+        input, button { width: 100%; padding: 10px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Оператор</h1>
+    <div id="chat"></div>
+    <input type="text" id="messageInput" placeholder="Введите ответ...">
+    <button id="sendButton">Отправить</button>
+
+    <script>
+        const chat = document.getElementById('chat');
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+
+        const socket = new WebSocket('ws://localhost:8080');
+
+        // Регистрация клиента как "operator"
+        socket.onopen = function() {
+            socket.send(JSON.stringify({ type: 'register', role: 'operator' }));
+        };
+
+        // Обработка входящих сообщений
+        socket.onmessage = function(event) {
+            const message = JSON.parse(event.data);
+            chat.innerHTML += `<p><strong>Пользователь:</strong> ${message.text}</p>`;
+            chat.scrollTop = chat.scrollHeight;
+        };
+
+        // Отправка ответа пользователю
+        sendButton.onclick = function() {
+            const messageText = messageInput.value;
+            if (messageText) {
+                const message = {
+                    from: 'operator',
+                    to: 'user',
+                    text: messageText
+                };
+                socket.send(JSON.stringify(message));
+                chat.innerHTML += `<p><strong>Вы:</strong> ${messageText}</p>`;
+                messageInput.value = '';
+            }
+        };
+    </script>
+</body>
+</html>
