@@ -1,0 +1,36 @@
+#forecast__container {
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+}
+body {
+  background-color: rgb(127, 253, 255);
+}
+
+.header__container {
+  text-align: center;
+}
+
+#forecast__container {
+  margin-top: 130px;
+  margin-left: 60px;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 30px;
+  font-style: normal;
+}
+h1 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 40px;
+  font-style: normal;
+}
+
+.tempItem {
+  position: relative;
+  top: 150px;
+}
